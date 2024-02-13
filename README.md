@@ -1,1 +1,2 @@
-# Algoritma_Struktur_Data_1G_15
+Praktikum Algoritma Struktur Data
+Hizkia Elsadanta // 15
