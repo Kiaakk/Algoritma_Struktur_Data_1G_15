@@ -20,7 +20,7 @@ public class Buku15 {
         stok += jml;
     }
 
-    int gantiHarga(int hrg) {
+    void gantiHarga(int hrg) {
         harga = hrg;
     }
-}
+}   
