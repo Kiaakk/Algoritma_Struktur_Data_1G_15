@@ -9,6 +9,7 @@ public class ArrayBalok15 {
 
         for (int i = 0; i < 3; i++) {
             System.out.println("Volume balok ke " + i + ": " + blArray[i].hitungVolume());
+            System.out.println("Luas alas balok ke " + i + ": " + blArray[i].hitungLuasAlas());
         }
     }
 }
