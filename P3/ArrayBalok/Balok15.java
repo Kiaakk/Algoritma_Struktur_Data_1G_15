@@ -15,6 +15,11 @@ public class Balok15 {
         return panjang * lebar * tinggi;
     }
 
+    public Balok15(int p, int l) {
+        panjang = p;
+        lebar = l;
+    }
+
     public int hitungLuasAlas() {
         return panjang * lebar;
     }
