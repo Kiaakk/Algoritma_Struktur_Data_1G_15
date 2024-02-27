@@ -7,6 +7,8 @@ public class ArrayObjects15 {
     static Scanner kiak = new Scanner(System.in);
     public static void main(String[] args) {
         PersegiPanjang15[] ppArray = new PersegiPanjang15[3];
+        Persegi15[] pgArray = new Persegi15[100];
+        pgArray[5].sisi = 20;
         
         for (int i = 0; i < 3; i++) {
             ppArray[i] = new PersegiPanjang15();
