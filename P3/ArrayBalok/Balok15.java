@@ -18,6 +18,7 @@ public class Balok15 {
     public Balok15(int p, int l) {
         panjang = p;
         lebar = l;
+        tinggi = 25;
     }
 
     public int hitungLuasAlas() {
