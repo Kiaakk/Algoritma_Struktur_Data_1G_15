@@ -12,12 +12,12 @@ public class MainPangkat15 {
 
         Pangkat15[] png = new Pangkat15[elemen];
         for (int i = 0; i < elemen; i++) {
-            png[i] = new Pangkat15();
             System.out.print("Masukkan nilai yang hendak dipangkatkan: ");
-            png[i].nilai = kia.nextInt();
+            int nilai = kia.nextInt();
 
             System.out.print("Masukkan nilai pemangkat: ");
-            png[i].pangkat = kia.nextInt();
+            int pangkat = kia.nextInt();
+            png[i] = new Pangkat15(nilai, pangkat);
         }
 
         System.out.println("==================================");
