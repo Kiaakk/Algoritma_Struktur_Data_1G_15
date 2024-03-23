@@ -20,18 +20,46 @@ public class MainPangkat15 {
             png[i] = new Pangkat15(nilai, pangkat);
         }
 
-        System.out.println("==================================");
-        System.out.println("HASIL PANGKAT - BRUTE FORCE");
-        for (int i = 0; i < elemen; i++) {
-            System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah " + png[i].pangkatBF(png[i].nilai, png[i].pangkat));
-        }
+        int menu;
+        do {
+            System.out.println("=== Pilih method yang ingin dijalankan === ");
+            System.out.println("1. Brute Force");
+            System.out.println("2. Divide and Conquer");
+            System.out.println("Menu : ");
+            menu = kia.nextInt();
 
-        System.out.println("==================================");
-        System.out.println("HASIL PANGKAT - DIVIDE AND CONQUER");
-        for (int i = 0; i < elemen; i++) {
-            System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah " + png[i].pangkatDC(png[i].nilai, png[i].pangkat));
-        }
+            switch (menu) {
+                case 1:
+                    System.out.println("==================================");
+                    System.out.println("HASIL PANGKAT - BRUTE FORCE");
+                    for (int i = 0; i < elemen; i++) {
+                        System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah " + png[i].pangkatBF(png[i].nilai, png[i].pangkat));
+                    }
+                    break;
 
+                case 2:
+                    System.out.println("==================================");
+                    System.out.println("HASIL PANGKAT - DIVIDE AND CONQUER");
+                    for (int i = 0; i < elemen; i++) {
+                        System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah " + png[i].pangkatDC(png[i].nilai, png[i].pangkat));
+                    }
+                    break;
+            
+                default:
+                    System.out.println("Angka yang anda masukkan tidak valid");
+            }
+        } while (menu < 1 || menu > 2);
+        // System.out.println("==================================");
+        // System.out.println("HASIL PANGKAT - BRUTE FORCE");
+        // for (int i = 0; i < elemen; i++) {
+        //     System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah " + png[i].pangkatBF(png[i].nilai, png[i].pangkat));
+        // }
+
+        // System.out.println("==================================");
+        // System.out.println("HASIL PANGKAT - DIVIDE AND CONQUER");
+        // for (int i = 0; i < elemen; i++) {
+        //     System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah " + png[i].pangkatDC(png[i].nilai, png[i].pangkat));
+        // }
         kia.close();
     }
 }
