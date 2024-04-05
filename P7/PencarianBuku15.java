@@ -38,4 +38,16 @@ public class PencarianBuku15 {
         }
     }
 
+    void displayData(int x, int pos) {
+        if (pos != -1) {
+            System.out.println("Book code \t\t : " + x);
+            System.out.println("Book title \t\t : " + listBk[pos].bookTitle);
+            System.out.println("Publication year \t : " + listBk[pos].publicationYear);
+            System.out.println("Author \t\t\t : " + listBk[pos].author);
+            System.out.println("Stock \t\t\t : " + listBk[pos].stock);
+        } else {
+            System.out.println("data " + x + " not found");
+        }
+    }
+
 }

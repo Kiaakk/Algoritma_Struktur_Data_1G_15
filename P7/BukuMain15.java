@@ -44,6 +44,7 @@ public class BukuMain15 {
         System.out.println("Using sequential search");
         int posisi = data.findSeqSearch(search);
         data.displayPosition(search, posisi);
+        data.displayData(search, posisi);
         
         kiak.close();
 
