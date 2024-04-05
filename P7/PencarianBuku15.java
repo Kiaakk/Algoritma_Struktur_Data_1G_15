@@ -50,4 +50,13 @@ public class PencarianBuku15 {
         }
     }
 
+    Buku15 FindBuku(int cari) {
+        for (int i = 0; i < listBk.length; i++) {
+            if (listBk[i].bookCode == cari) {
+                return listBk[i];
+            }
+        }
+        return listBk[-1];
+    }
+
 }

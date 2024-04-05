@@ -45,6 +45,9 @@ public class BukuMain15 {
         int posisi = data.findSeqSearch(search);
         data.displayPosition(search, posisi);
         data.displayData(search, posisi);
+
+        Buku15 dataBook = data.FindBuku(posisi);
+        dataBook.displayBookData();
         
         kiak.close();
 
