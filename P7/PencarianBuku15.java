@@ -14,6 +14,7 @@ public class PencarianBuku15 {
     }
 
     void display() {
+        bubbleSort();
         for (Buku15 m : listBk) {
             m.displayBookData();
         }
@@ -43,25 +44,25 @@ public class PencarianBuku15 {
         return position;
     }
  
-    void displayPosition(int x, int pos) {
-        if (pos != -1) {
-            System.out.println("data : " + x + " is found at indeks " + pos);
-        } else {
-            System.out.println("data " + x + " not found");
-        }
-    }
+    // void displayPosition(int x, int pos) {
+    //     if (pos != -1) {
+    //         System.out.println("data : " + x + " is found at indeks " + pos);
+    //     } else {
+    //         System.out.println("data " + x + " not found");
+    //     }
+    // }
 
-    void displayData(int x, int pos) {
-        if (pos != -1) {
-            System.out.println("Book code \t\t : " + x);
-            System.out.println("Book title \t\t : " + listBk[pos].bookTitle);
-            System.out.println("Publication year \t : " + listBk[pos].publicationYear);
-            System.out.println("Author \t\t\t : " + listBk[pos].author);
-            System.out.println("Stock \t\t\t : " + listBk[pos].stock);
-        } else {
-            System.out.println("data " + x + " not found");
-        }
-    }
+    // void displayData(int x, int pos) {
+    //     if (pos != -1) {
+    //         System.out.println("Book code \t\t : " + x);
+    //         System.out.println("Book title \t\t : " + listBk[pos].bookTitle);
+    //         System.out.println("Publication year \t : " + listBk[pos].publicationYear);
+    //         System.out.println("Author \t\t\t : " + listBk[pos].author);
+    //         System.out.println("Stock \t\t\t : " + listBk[pos].stock);
+    //     } else {
+    //         System.out.println("data " + x + " not found");
+    //     }
+    // }
 
     // Buku15 FindBuku(int search) {
     //     for (int i = 0; i < listBk.length; i++) {
@@ -104,4 +105,64 @@ public class PencarianBuku15 {
         return -1;
     }
 
+    // SEARCH FOR BOOKS BY THE TITLE.
+    int seqBookTitle(String search) {
+        int position = -1;
+        for (int i = 0; i < listBk.length; i++) {           
+            if (listBk[i].bookTitle.equals(search)) {
+                return position = i;
+            }
+        }
+        return position;
+    }
+
+    int binBookTitle(String search, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (right + left) / 2;
+            int result = search.compareTo(listBk[mid].bookTitle);
+            if (result == 0) {
+                return mid;
+
+            } else if (result < 0) {
+                return binBookTitle(search, left, mid - 1);
+            } else {
+                return binBookTitle(search, mid + 1, right);
+            }
+        }
+        return -1;
+    }
+
+    void displayPosition(String x, int pos) {
+        if (pos != -1) {
+            System.out.println("data : " + x + " is found at indeks " + pos);
+        } else {
+            System.out.println("data " + x + " not found");
+        }
+    }
+
+    void displayData(String x, int pos) {
+        if (pos != -1) {
+            System.out.println("Book code \t\t : " + listBk[pos].bookCode);
+            System.out.println("Book title \t\t : " + listBk[pos].bookTitle);
+            System.out.println("Publication year \t : " + listBk[pos].publicationYear);
+            System.out.println("Author \t\t\t : " + listBk[pos].author);
+            System.out.println("Stock \t\t\t : " + listBk[pos].stock);
+        } else {
+            System.out.println("data " + x + " not found");
+        }
+    }
+
+    // ORGANIZE THE BOOK COLLECTION ACCORDING TO THE BOOK CODE.
+    void bubbleSort() {
+        for (int i = 0; i < listBk.length - 1; i++) {
+            for (int j = 1; j < listBk.length - i; j++) {
+                if (listBk[j].bookCode.compareTo(listBk[j - 1].bookCode) < 0) {
+                    Buku15 tmp = listBk[j];
+                    listBk[j] = listBk[j - 1];
+                    listBk[j - 1] = tmp;
+                }
+            }
+        }
+    }
 }

@@ -35,29 +35,46 @@ public class BukuMain15 {
         System.out.println("The complete dataset of the book : ");
         data.display();
 
-        System.out.println("============================================");
-        System.out.println("============================================");
-        System.out.println("Data search");
-        System.out.println("Provide the book code you are searching for : ");
-        System.out.print("Book code : ");
-        int search = kiak.nextInt();
-        System.out.println("Using sequential search");
-        // int posisi = data.findSeqSearch(search);
-        int posisi = data.findSeq(search);
-        data.displayPosition(search, posisi);
-        data.displayData(search, posisi);
+        // System.out.println("============================================");
+        // System.out.println("============================================");
+        // System.out.println("Data search");
+        // System.out.println("Provide the book code you are searching for : ");
+        // System.out.print("Book code : ");
+        // int search = kiak.nextInt();
+        // System.out.println("Using sequential search");
+        // // int posisi = data.findSeqSearch(search);
+        // int posisi = data.findSeq(search);
+        // data.displayPosition(search, posisi);
+        // data.displayData(search, posisi);
 
         // Buku15 dataBook = data.FindBuku(search);
         // dataBook.displayBookData();
 
+        // System.out.println("============================================");
+        // System.out.println("============================================");
+        // System.out.println("Using binary search");
+        // // posisi = data.findBinarySearch(search, 0, numOfBooks-1);
+        // posisi = data.findBin(search, 0, numOfBooks-1);
+        // data.displayPosition(search, posisi);
+        // data.displayData(search, posisi);
+
         System.out.println("============================================");
         System.out.println("============================================");
+        System.out.println("Data search");
+        System.out.println("Provide the book code you are searching for : ");
+        System.out.print("Book title : ");
+        String title = kiak.nextLine();
+
+        System.out.println("Using sequential search");
+        int position = data.seqBookTitle(title);
+        data.displayPosition(title, position);
+        data.displayData(title, position);
+
         System.out.println("Using binary search");
-        // posisi = data.findBinarySearch(search, 0, numOfBooks-1);
-        posisi = data.findBin(search, 0, numOfBooks-1);
-        data.displayPosition(search, posisi);
-        data.displayData(search, posisi);
-        
+        position = data.binBookTitle(title, 0, numOfBooks-1);
+        data.displayPosition(title, position);
+        data.displayData(title, position);      
+
         kiak.close();
 
     }   
