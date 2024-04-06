@@ -50,13 +50,28 @@ public class PencarianBuku15 {
         }
     }
 
-    Buku15 FindBuku(int cari) {
+    Buku15 FindBuku(int search) {
         for (int i = 0; i < listBk.length; i++) {
-            if (listBk[i].bookCode == cari) {
+            if (listBk[i].bookCode == search) {
                 return listBk[i];
             }
         }
         return listBk[-1];
+    }
+
+    int findBinarySearch(int search, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (right + left) / 2;
+            if (search == listBk[mid].bookCode) {
+                return (mid);
+            } else if (listBk[mid].bookCode > search){
+                return findBinarySearch(search, left, mid - 1);
+            } else {
+                return findBinarySearch(search, mid + 1, right);
+            }
+        }
+        return -1;
     }
 
 }

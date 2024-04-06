@@ -46,8 +46,15 @@ public class BukuMain15 {
         data.displayPosition(search, posisi);
         data.displayData(search, posisi);
 
-        Buku15 dataBook = data.FindBuku(posisi);
-        dataBook.displayBookData();
+        // Buku15 dataBook = data.FindBuku(search);
+        // dataBook.displayBookData();
+
+        System.out.println("============================================");
+        System.out.println("============================================");
+        System.out.println("Using binary search");
+        posisi = data.findBinarySearch(search, 0, numOfBooks-1);
+        data.displayPosition(search, posisi);
+        data.displayData(search, posisi);
         
         kiak.close();
 
