@@ -19,10 +19,23 @@ public class PencarianBuku15 {
         }
     }
 
-    int findSeqSearch(int search) {
+    // int findSeqSearch(int search) {
+    //     int position = -1;
+    //     for (int i = 0; i < listBk.length; i++) {
+    //         if (listBk[i].bookCode == search) {
+    //             position = i;
+    //             break;
+    //         }
+    //     }
+    //     return position;
+    // }
+
+    int findSeq(int search) {
         int position = -1;
         for (int i = 0; i < listBk.length; i++) {
-            if (listBk[i].bookCode == search) {
+            // Integer.parseInt untuk mengkonversi String menjadi int
+            int bookCode2 = Integer.parseInt(listBk[i].bookCode);
+            if (bookCode2 == search) {
                 position = i;
                 break;
             }
@@ -50,27 +63,44 @@ public class PencarianBuku15 {
         }
     }
 
-    Buku15 FindBuku(int search) {
-        for (int i = 0; i < listBk.length; i++) {
-            if (listBk[i].bookCode == search) {
-                return listBk[i];
-            }
-        }
-        return listBk[-1];
-    }
+    // Buku15 FindBuku(int search) {
+    //     for (int i = 0; i < listBk.length; i++) {
+    //         if (listBk[i].bookCode == search) {
+    //             return listBk[i];
+    //         }
+    //     }
+    //     return listBk[-1];
+    // }
 
-    int findBinarySearch(int search, int left, int right) {
+    // int findBinarySearch(int search, int left, int right) {
+    //     int mid;
+    //     if (right >= left) {
+    //         mid = (right + left) / 2;
+    //         if (search == listBk[mid].bookCode) {
+    //             return (mid);
+    //         } else if (listBk[mid].bookCode < search){
+    //             return findBinarySearch(search, left, mid - 1);
+    //         } else {
+    //             return findBinarySearch(search, mid + 1, right);
+    //         }
+    //     }
+    //     return -1;
+    // }
+
+    int findBin(int search, int left, int right) {
         int mid;
         if (right >= left) {
             mid = (right + left) / 2;
-            if (search == listBk[mid].bookCode) {
-                return (mid);
-            } else if (listBk[mid].bookCode < search){
-                return findBinarySearch(search, left, mid - 1);
+            // integer.paraseInt untuk mengkonversi dari String ke int
+            int comResult = Integer.parseInt(listBk[mid].bookCode);
+            if (comResult == search) {
+                return mid;
+            } else if (comResult > search ) {
+                return findBin(search, left, mid - 1);
             } else {
-                return findBinarySearch(search, mid + 1, right);
+                return findBin(search, mid + 1, right);
             }
-        }
+        } 
         return -1;
     }
 

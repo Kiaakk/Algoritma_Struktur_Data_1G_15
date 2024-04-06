@@ -1,10 +1,10 @@
 package P7;
 
 public class Buku15 {
-    int bookCode, stock, publicationYear;
-    String bookTitle, author;
+    int stock, publicationYear;
+    String bookTitle, author, bookCode;
 
-    Buku15(int bc, String bt, int py, String au, int st) {
+    Buku15(String bc, String bt, int py, String au, int st) {
         bookCode = bc;
         bookTitle = bt;
         publicationYear = py;

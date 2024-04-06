@@ -15,8 +15,7 @@ public class BukuMain15 {
         for (int i = 0; i < numOfBooks; i++) {
             System.out.println("=================================");
             System.out.print("Book code \t\t : ");
-            int bookCode = kiak.nextInt();
-            kiak.nextLine();
+            String bookCode = kiak.nextLine();
             System.out.print("Book title \t\t : ");
             String bookTitle = kiak.nextLine();
             System.out.print("Publication year \t : ");
@@ -26,6 +25,7 @@ public class BukuMain15 {
             String author = kiak.nextLine();
             System.out.print("Stock \t\t\t : ");
             int stock = kiak.nextInt();
+            kiak.nextLine();
 
             Buku15 m = new Buku15(bookCode, bookTitle, publicationYear, author, stock);
             data.add(m);
@@ -42,7 +42,8 @@ public class BukuMain15 {
         System.out.print("Book code : ");
         int search = kiak.nextInt();
         System.out.println("Using sequential search");
-        int posisi = data.findSeqSearch(search);
+        // int posisi = data.findSeqSearch(search);
+        int posisi = data.findSeq(search);
         data.displayPosition(search, posisi);
         data.displayData(search, posisi);
 
@@ -52,7 +53,8 @@ public class BukuMain15 {
         System.out.println("============================================");
         System.out.println("============================================");
         System.out.println("Using binary search");
-        posisi = data.findBinarySearch(search, 0, numOfBooks-1);
+        // posisi = data.findBinarySearch(search, 0, numOfBooks-1);
+        posisi = data.findBin(search, 0, numOfBooks-1);
         data.displayPosition(search, posisi);
         data.displayData(search, posisi);
         
