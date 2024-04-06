@@ -65,7 +65,7 @@ public class PencarianBuku15 {
             mid = (right + left) / 2;
             if (search == listBk[mid].bookCode) {
                 return (mid);
-            } else if (listBk[mid].bookCode > search){
+            } else if (listBk[mid].bookCode < search){
                 return findBinarySearch(search, left, mid - 1);
             } else {
                 return findBinarySearch(search, mid + 1, right);
