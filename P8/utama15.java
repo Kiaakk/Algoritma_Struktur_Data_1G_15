@@ -44,7 +44,7 @@ public class utama15 {
                     gudang.tampilkanBarang();
                     System.out.println();
                     break;
-                
+
                 case 4: 
                     kiaganteng = false;
                     break;                
