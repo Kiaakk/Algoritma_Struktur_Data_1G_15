@@ -7,7 +7,9 @@ public class utama15 {
     static Scanner kiak = new Scanner(System.in);
     public static void main(String[] args) {
         
-        gudang15 gudang = new gudang15(7);
+        System.out.print("Masukkan kapasitas gudang : ");
+        int kapasitas = kiak.nextInt();
+        gudang15 gudang = new gudang15(kapasitas);
 
         boolean kiaganteng = true;
 
@@ -16,7 +18,8 @@ public class utama15 {
             System.out.println("1. Tambang barang");
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
-            System.out.println("4. Keluar");
+            System.out.println("4. Lihat barang teratas");
+            System.out.println("5. Keluar");
             System.out.print("Pilih operasi: ");
             int pilihan = kiak.nextInt();
             kiak.nextLine();
@@ -45,7 +48,12 @@ public class utama15 {
                     System.out.println();
                     break;
 
-                case 4: 
+                case 4:
+                    gudang.lihatBarangTeratas();
+                    System.out.println();
+                    break;
+
+                case 5: 
                     kiaganteng = false;
                     break;                
             
