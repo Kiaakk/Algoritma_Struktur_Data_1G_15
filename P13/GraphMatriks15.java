@@ -28,4 +28,28 @@ public class GraphMatriks15 {
             System.out.println();
         }
     }
+
+    int inDegree(int gedung) {
+        int inDegree = 0;
+        for (int i = 0; i < vertex; i++) {
+            if (matriks[i][gedung] != 0) {
+                inDegree++;
+            }
+        }
+        return inDegree;
+    }
+
+    int outDegree(int gedung) {
+        int outDegree = 0;
+        for (int j = 0; j < vertex; j++) {
+            if (matriks[gedung][j] != 0) {
+                outDegree++;
+            }
+        }
+        return outDegree;
+    }
+
+    int degree(int gedung) {
+        return inDegree(gedung) + outDegree(gedung);
+    }
 }
