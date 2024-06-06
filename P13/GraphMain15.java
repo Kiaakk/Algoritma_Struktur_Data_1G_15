@@ -53,7 +53,7 @@ public class GraphMain15 {
         //             break;
         //     }
         // }
-        
+
         GraphMatriks15 gdg = new GraphMatriks15(4);
         gdg.makeEdge(0, 1, 50);
         gdg.makeEdge(1, 0, 60);
@@ -66,5 +66,9 @@ public class GraphMain15 {
         gdg.removeEdge(2, 1);
         gdg.printGraph();
         System.out.println();
+        
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Gedung " + (char) ('A' + i) + ": InDegree = " + gdg.inDegree(i) + ", OutDegree = " + gdg.outDegree(i) + ", Total Degree = " + gdg.degree(i));
+        }
     }
 }
